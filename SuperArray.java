@@ -140,6 +140,29 @@ public class SuperArray{
 	for(int i=0; i<10; i++) {
 	    a.add(new Binary(i));
 	}
+	System.out.println(a);
+	SuperArray b = new SuperArray();
+	b.add(new Rational(2,3));
+	System.out.println(b);
+	b.add(new Rational(2,5));
+	System.out.println(b);
+	b.add(new Hexadecimal(7));
+	System.out.println(b);
+	b.add(new Hexadecimal( 17));
+	System.out.println(b);
+	b.add(new Hexadecimal(108));
+	System.out.println(b);
+	b.add(new Binary(1738));
+	System.out.println(b);
+	b.add(new Binary(5));
+	System.out.println(b);
+	System.out.println(a.isSorted());
+	System.out.println(b.isSorted());
+	Binary elf = new Binary(4);
+	Binary santa = new Binary(54);
+	System.out.println(a.linSearch(elf));
+	System.out.println(a.linSearch(santa));
+	    
 
     }//end main
 		

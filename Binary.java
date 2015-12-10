@@ -79,7 +79,11 @@ public class Binary implements Comparable{
 	    n = (int)(n/2);
 	}
 	a+="1";
-	return a;
+	String b="";
+	for (int i = a.length()-1; i>=0; i--) {
+	    b = b + a.substring(i,i+1);
+	}   
+	return b;
     }
 
 
@@ -225,6 +229,8 @@ public class Binary implements Comparable{
 
 	Binary b1 = new Binary(5);
 	Binary b2 = new Binary(5);
+	Binary b12 = new Binary(4);
+	System.out.println(b12);
 	Binary b3 = b1;
 	Binary b4 = new Binary(7);
 	System.out.println( b1 );
