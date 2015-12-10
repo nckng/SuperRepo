@@ -182,8 +182,8 @@ public class Hexadecimal implements Comparable{
     public int compareTo( Object other ) {
 	
 	//both Hexadecimal objects? if not, error!
-	if (!(other instanceof Hexadecimal)){
-	    throw new ClassCastException (".compareTo() Input not a hex");
+	if (!(other instanceof Comparable)){
+	    throw new ClassCastException (".compareTo() Input not comparable");
 	}
 	
 	//return difference

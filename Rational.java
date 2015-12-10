@@ -92,6 +92,9 @@ public class Rational implements Comparable {
 	return compareTo((Rational) o);
     }
     public int compareTo(Rational factor) {
+	if (!(other instanceof Comparable)){
+	    throw new ClassCastException (".compareTo() Input not comparable");
+	}
 	//I didn't reduce the Rationals because that would alter them without the user explicitly wanting to alter them
 	
 	//The following is just basic fraction comparison. Multiply by each other's denominators and then compare numerators.

@@ -170,6 +170,9 @@ public class Binary implements Comparable{
       Object), or if this and other represent equal binary values
       =============================================*/
     public boolean equals( Object other ) {
+	if (!(other instanceof Comparable)){
+	    throw new ClassCastException (".equals() Input not Comparable");
+	}
 	if (compareTo(other) == 0){
 	    return true;
 	}
@@ -186,6 +189,9 @@ public class Binary implements Comparable{
       negative integer if this<input, positive integer otherwise
       =============================================*/
     public int compareTo( Object other ) {
+	if (!(other instanceof Binary)){
+	    throw new ClassCastException (".compareTo() Input not a Binary");
+	}
 	if (other instanceof Binary){
 	    if(this._decNum == ((Binary)other)._decNum){
 		return 0;
