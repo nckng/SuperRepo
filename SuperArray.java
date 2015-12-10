@@ -115,6 +115,24 @@ public class SuperArray{
     public int size() {
         return _size;
     }
+    public int linSearch(Comparable c){
+	int i = 0;
+	while (i < _size){
+	    if (_data[i].equals(c)){
+		return i;
+	    }
+	    i++;
+	}
+	return -1;
+    }
+    public boolean isSorted(){
+	for (int i = 0; i < _size -1; i++){
+	    if (_data[i].compareTo(_data[i+1])>0){
+		return false;
+	    }
+	}
+	return true;
+    }
     //main method for testing
     public static void main( String[] args ) {
 	//*****INSERT ADEQUATE TEST CALLS HERE*****
