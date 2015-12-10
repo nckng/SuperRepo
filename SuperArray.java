@@ -160,9 +160,13 @@ public class SuperArray{
 	System.out.println(b.isSorted());
 	Binary elf = new Binary(4);
 	Binary santa = new Binary(54);
+	Rational fred = new Rational(2,3);
 	System.out.println(a.linSearch(elf));
 	System.out.println(a.linSearch(santa));
-	    
+	System.out.println(elf.compareTo(santa));
+	System.out.println(santa.compareTo(elf));
+	System.out.println(fred.compareTo(elf));
+	
 
     }//end main
 		

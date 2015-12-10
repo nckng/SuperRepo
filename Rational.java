@@ -97,9 +97,10 @@ public class Rational implements Comparable {
 	
 	//The following is just basic fraction comparison. Multiply by each other's denominators and then compare numerators.
 	//if (!(factor instanceof Rational)) {return -1;}
-	int thisNumer = numer * ((Rational)factor).denom;
-	int thatNumer = ((Rational)factor).numer * denom;
+
 	if (factor instanceof Rational){
+	    	int thisNumer = numer * ((Rational)factor).denom;
+	int thatNumer = ((Rational)factor).numer * denom;
 	    if(thisNumer == thatNumer ) {
 		return 0;
 	    }
