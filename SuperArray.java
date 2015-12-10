@@ -19,7 +19,7 @@ PHASE II additions:
 * public int size() {} //returns number of menainful elements in _data
 *****************************/
 
-public class SuperArray {
+public class SuperArray implements Comparable{
 
     //~~~~~INSTANCE VARS~~~~~
     //underlying container, or "core" of this data structure:

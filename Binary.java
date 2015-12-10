@@ -5,7 +5,7 @@ HW43 -- This or That
 2015-12-7
 */
 
-public class Binary {
+public class Binary implements Comparable{
 
     private int _decNum;
     private String _binNum;
