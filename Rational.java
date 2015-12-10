@@ -88,30 +88,42 @@ public class Rational implements Comparable {
     }
 
     // Instead of using LCD to compare, this method simply utilizes floatValue() to compare float values of the rationals.
-    public int compareTo(Object o){
-	return compareTo((Rational) o);
-    }
-    public int compareTo(Rational factor) {
-	if (!(other instanceof Comparable)){
+
+    public int compareTo(Object factor) {
+	if (!(factor instanceof Comparable)){
 	    throw new ClassCastException (".compareTo() Input not comparable");
 	}
 	//I didn't reduce the Rationals because that would alter them without the user explicitly wanting to alter them
 	
 	//The following is just basic fraction comparison. Multiply by each other's denominators and then compare numerators.
 	//if (!(factor instanceof Rational)) {return -1;}
-	int thisNumer = numer * factor.denom;
-	int thatNumer = factor.numer * denom;
+	int thisNumer = numer * ((Rational)factor).denom;
+	int thatNumer = ((Rational)factor).numer * denom;
+	if (factor instanceof Rational){
+	    if(thisNumer == thatNumer ) {
+		return 0;
+	    }
+	    else if(thisNumer > thatNumer) {
+		return 1;
+	    }
+	    else {
+		return -1;
+	    }
+	}
 	
-	if(thisNumer == thatNumer ) {
-	    return 0;
+	else if (factor instanceof Hexadecimal){
+	    return (int)(this.floatValue() - ((Hexadecimal)factor)._decNum);
 	}
-	else if(thisNumer > thatNumer) {
-	    return 1;
-	}
-	else {
-	    return -1;
+	else{
+	    return (int)(this.floatValue() - ((Binary)factor)._decNum);
 	}
     }
+	
+  
+	
+
+
+
     
     public boolean equals(Object rat) {
 	//First check aliasing:

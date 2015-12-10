@@ -7,8 +7,8 @@ HW43 -- This or That
 
 public class Binary implements Comparable{
 
-    private int _decNum;
-    private String _binNum;
+    public int _decNum;
+    public String _binNum;
 
 
     /*=====================================
@@ -204,9 +204,14 @@ public class Binary implements Comparable{
 	    }
 		
 	}
+	
+	else if (other instanceof Hexadecimal){
+	    return this._decNum - ((Hexadecimal)other)._decNum;
+	}
 	else{
-	    return 1;
-	}   
+	    return this._decNum - (int)(((Rational)other).floatValue());
+	}
+	
     }
 
 

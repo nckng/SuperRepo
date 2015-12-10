@@ -7,7 +7,7 @@
 public class Hexadecimal implements Comparable{
 
     private final static String HEXDIGITS = "0123456789ABCDEF";
-    private int _decNum;
+    public int _decNum;
     private String _hexNum;
 
 
@@ -187,7 +187,15 @@ public class Hexadecimal implements Comparable{
 	}
 	
 	//return difference
-	return this._decNum - ((Hexadecimal)other)._decNum;
+	if (other instanceof Hexadecimal){
+	    return this._decNum - ((Hexadecimal)other)._decNum;
+	}
+	else if (other instanceof Binary){
+	    return this._decNum - ((Binary)other)._decNum;
+	}
+	else{
+	    return this._decNum - (int)(((Rational)other).floatValue());
+	}
     }
 
 
